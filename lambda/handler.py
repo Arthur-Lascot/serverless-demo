@@ -58,6 +58,12 @@ def handler(event, context):
                 "body": json.dumps({"error": str(e)})
             }
 
+    elif route == "/contact" and method == "GET":
+        return {
+            "statusCode": 200,
+            "headers": {"Content-Type": "application/json"},
+            "body": json.dumps(table.scan())
+        }
     else:
         return {
             "statusCode": 404,
