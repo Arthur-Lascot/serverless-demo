@@ -22,7 +22,7 @@ def handler(event, context):
         aws_access_key_id='test',
         aws_secret_access_key='test'
     )
-    # table = dynamodb.Table(table_name)
+    table = dynamodb.Table(table_name)
 
     route = event.get("rawPath") or event.get("path") or ""
     method = (
